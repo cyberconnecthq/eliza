@@ -115,7 +115,8 @@ import { TEEMode, teePlugin } from "@elizaos/plugin-tee";
 import { teeLogPlugin } from "@elizaos/plugin-tee-log";
 import { teeMarlinPlugin } from "@elizaos/plugin-tee-marlin";
 import { verifiableLogPlugin } from "@elizaos/plugin-tee-verifiable-log";
-import { tonPlugin } from "@elizaos/plugin-ton";
+// import { tonPlugin } from "@elizaos/plugin-ton"; // build error, comment for test
+import { twitterDataPlugin } from "@elizaos/plugin-twitter-data";
 import { webSearchPlugin } from "@elizaos/plugin-web-search";
 import { dkgPlugin } from "@elizaos/plugin-dkg";
 import { injectivePlugin } from "@elizaos/plugin-injective";
@@ -1048,6 +1049,7 @@ export async function createAgent(
                 ? nitroPlugin
                 : null,
             getSecret(character, "TAVILY_API_KEY") ? webSearchPlugin : null,
+            twitterDataPlugin, // todo waiting for api key
             getSecret(character, "SOLANA_PUBLIC_KEY") ||
             (getSecret(character, "WALLET_PUBLIC_KEY") &&
                 !getSecret(character, "WALLET_PUBLIC_KEY")?.startsWith("0x"))
@@ -1167,7 +1169,7 @@ export async function createAgent(
                 ? cronosZkEVMPlugin
                 : null,
             getSecret(character, "TEE_MARLIN") ? teeMarlinPlugin : null,
-            getSecret(character, "TON_PRIVATE_KEY") ? tonPlugin : null,
+            // getSecret(character, "TON_PRIVATE_KEY") ? tonPlugin : null,
             getSecret(character, "THIRDWEB_SECRET_KEY") ? thirdwebPlugin : null,
             getSecret(character, "SUI_PRIVATE_KEY") ? suiPlugin : null,
             getSecret(character, "STORY_PRIVATE_KEY") ? storyPlugin : null,

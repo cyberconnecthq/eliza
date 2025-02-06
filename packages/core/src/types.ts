@@ -1524,6 +1524,7 @@ export enum ServiceType {
     GOPLUS_SECURITY = "goplus_security",
     WEB_SEARCH = "web_search",
     EMAIL_AUTOMATION = "email_automation",
+    TWITTER_DATA_SEARCH = "twitter_data_search",
 }
 
 export enum LoggingLevel {
