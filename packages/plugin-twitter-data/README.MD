@@ -112,7 +112,9 @@ Example character configuration using this plugin:
 ```json
 {
     "name": "crypto_analyst",
-    "plugins": ["twitter-data"],
+    "plugins": [
+        "@elizaos/plugin-twitter-data"
+    ],
     "bio": [
         "Crypto sentiment analyst who's fluent in both English and Chinese",
         "Master of finding alpha through Twitter data analysis",
